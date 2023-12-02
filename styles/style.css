@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Lexend", sans-serif;
+  background-color: #fdffe7;
+  color: #f5efe3;
+}
+header {
+  display: inline;
+}
+#brand {
+  font-size: 18px;
+  padding: 55px;
+  text-align: center;
+  background-color: #143a52;
+}
+nav {
+  text-align: right;
+  padding: 25px;
+  background-color: #143a52;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+nav ul li {
+  display: inline;
+  list-style-type: none;
+  margin: 25px;
+}
+nav ul li a {
+  border: 1px dotted #f5efe3;
+  border-radius: 20px;
+
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px 12px;
+  color: #f5efe3;
+}
+nav ul li .introduce {
+  display: none;
+}
+nav ul li a:hover {
+  background-color: #f5efe3;
+  color: #143a52;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  position: relative;
+  z-index: 3;
+}
+.hamburger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: #f5efe3;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+.hamburger input {
+  display: block;
+  position: absolute;
+  background-color: #f5efe3;
+  width: 40px;
+  height: 28px;
+  left: -5px;
+  top: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+.hamburger span:nth-child(2) {
+  transform-origin: 0 0;
+}
+.hamburger span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+.hamburger input:checked ~ span:nth-child(2) {
+  background-color: #f5efe3;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+.hamburger input:checked ~ span:nth-child(4) {
+  background-color: #f5efe3;
+  transform: rotate(-45deg) translate(-1px, 0);
+}
+.hamburger input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+main {
+  overflow: auto;
+  padding: 20px;
+}
+#content {
+  float: left;
+  width: 70%;
+}
+h2 {
+  text-align: center;
+  padding: 30px;
+}
+h3 {
+  padding: 15px;
+  color: #143a52;
+  font-weight: 900;
+}
+p {
+  font-weight: 400;
+  line-height: 25px;
+}
+.image {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  min-height: 300px;
+}
+.archive {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+  background-color: #f5efe3;
+  color: #143a52;
+}
+aside {
+  float: right;
+  width: 30%;
+  padding-left: 20px;
+}
+
+.biodata header {
+  text-align: center;
+}
+.biodata img {
+  width: 300px;
+  padding-bottom: 20px;
+}
+aside section table {
+  z-index: 1;
+  position: relative;
+  margin: auto;
+}
+aside section table th {
+  text-align: left;
+  width: 130px;
+}
+
+aside section table .titikDua {
+  width: 25px;
+}
+aside section table .answer {
+  width: 215px;
+}
+#note {
+  background-color: #f5efe3;
+}
+.note i {
+  font-weight: bold;
+  color: #143a52;
+}
+footer {
+  padding: 25px;
+  color: #f5efe3;
+  background-color: #143a52;
+  text-align: center;
+}
+footer img {
+  width: 150px;
+  object-fit: cover;
+  object-position: center;
+}
+footer p {
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 1047px) {
+  #content,
+  aside {
+    width: 100%;
+    padding: 0;
+  }
+  nav {
+    z-index: 1;
+    text-align: center;
+  }
+  #brand {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+  nav ul li a {
+    border: none;
+  }
+  nav ul li .introduce {
+    display: block;
+  }
+  #list ul {
+    display: flex;
+    position: absolute;
+    left: 0;
+    height: 100vh;
+    top: 0;
+    background-color: #143a52;
+    width: 50%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 1;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all 1s;
+  }
+  #list ul.slide {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  aside section table {
+    z-index: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  #content,
+  aside {
+    width: 100%;
+    padding: 0;
+  }
+}
